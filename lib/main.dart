@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+//import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(const BasktballApp());
 }
 
-class BasktballApp extends StatelessWidget {
+class BasktballApp extends StatefulWidget {
   const BasktballApp({super.key});
+
+  @override
+  State<BasktballApp> createState() => _BasktballAppState();
+}
+
+class _BasktballAppState extends State<BasktballApp> {
+  int countApoint = 0;
+
+  int countBpoint = 0;
 
   // This widget is the root of your application.
   @override
@@ -20,60 +29,73 @@ class BasktballApp extends StatelessWidget {
         ),
         body: Column(
           children: [
+            const SizedBox(
+              height: 32,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
                       "Team A ",
                       style: TextStyle(fontSize: 35),
                     ),
-                    const Text(
-                      "0 ",
-                      style: TextStyle(fontSize: 150),
+                    Text(
+                      '$countApoint',
+                      style: const TextStyle(fontSize: 150),
                     ),
                     ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
+                      onPressed: () {
+                        countApoint++;
+                        setState(() {});
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green,
+                          minimumSize: const Size(110, 45),
+                          shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.zero)),
+                      child: const Text(
                         "Add 1 Point",
                         style: TextStyle(color: Colors.black, fontSize: 18),
                       ),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green,
-                          minimumSize: const Size(110, 45),
-                          shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.zero)),
                     ),
                     const SizedBox(
                       height: 14,
                     ),
                     ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
+                      onPressed: () {
+                        countApoint++;
+                        setState(() {});
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green,
+                          minimumSize: const Size(110, 45),
+                          shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.zero)),
+                      child: const Text(
                         "Add 2 Point",
                         style: TextStyle(color: Colors.black, fontSize: 18),
                       ),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green,
-                          minimumSize: const Size(110, 45),
-                          shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.zero)),
                     ),
                     const SizedBox(
                       height: 14,
                     ),
                     ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        "Add 3 Point",
-                        style: TextStyle(color: Colors.black, fontSize: 18),
-                      ),
+                      onPressed: () {
+                        countApoint++;
+                        setState(() {});
+                      },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.green,
                           minimumSize: const Size(110, 45),
                           shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.zero)),
+                      child: const Text(
+                        "Add 3 Point",
+                        style: TextStyle(color: Colors.black, fontSize: 18),
+                      ),
                     )
                   ],
                 ),
@@ -90,55 +112,79 @@ class BasktballApp extends StatelessWidget {
                       "Team B ",
                       style: TextStyle(fontSize: 35),
                     ),
-                    const Text(
-                      "0 ",
-                      style: TextStyle(fontSize: 150),
+                    Text(
+                      "$countBpoint",
+                      style: const TextStyle(fontSize: 150),
                     ),
                     ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
+                      onPressed: () {
+                        countBpoint++;
+                        setState(() {});
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green,
+                          minimumSize: const Size(110, 45),
+                          shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.zero)),
+                      child: const Text(
                         "Add 1 Point",
                         style: TextStyle(color: Colors.black, fontSize: 18),
                       ),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green,
-                          minimumSize: const Size(110, 45),
-                          shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.zero)),
                     ),
                     const SizedBox(
                       height: 14,
                     ),
                     ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
+                      onPressed: () {
+                        countBpoint++;
+                        setState(() {});
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green,
+                          minimumSize: const Size(110, 45),
+                          shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.zero)),
+                      child: const Text(
                         "Add 2 Point",
                         style: TextStyle(color: Colors.black, fontSize: 18),
                       ),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green,
-                          minimumSize: const Size(110, 45),
-                          shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.zero)),
                     ),
                     const SizedBox(
                       height: 14,
                     ),
                     ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        "Add 3 Point",
-                        style: TextStyle(color: Colors.black, fontSize: 18),
-                      ),
+                      onPressed: () {
+                        countBpoint++;
+                        setState(() {});
+                      },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.green,
                           minimumSize: const Size(110, 45),
                           shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.zero)),
+                      child: const Text(
+                        "Add 3 Point",
+                        style: TextStyle(color: Colors.black, fontSize: 18),
+                      ),
                     )
                   ],
                 )
               ],
+            ),
+            const SizedBox(
+              height: 60,
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  minimumSize: const Size(110, 45),
+                  shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.zero)),
+              child: const Text(
+                "Reset",
+                style: TextStyle(color: Colors.black, fontSize: 18),
+              ),
             )
           ],
         ),
