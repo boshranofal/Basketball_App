@@ -78,7 +78,7 @@ class BasktballApp extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 250,
+                  height: 360,
                   child: VerticalDivider(
                     color: Colors.grey,
                     thickness: 1,
